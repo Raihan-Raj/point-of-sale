@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/toastify.css') }}">
     <script type="" src="{{ asset('js/toastify.js') }}"></script>
-    <script type="" src="{{ asset('Js/config.js') }}"></script>
+    <script src="{{ asset('js/config.js') }}"></script>
 </head>
 <body>
 
@@ -16,5 +16,6 @@
         @yield('content')
     </div>
     
+   
 </body>
 </html>
