@@ -129,3 +129,14 @@ body {
   outline: 0;
   background-color: #fc364c;
 }
+
+.form__field {
+  width: 260px;
+  background: #fff;
+  color: #a3a3a3;
+  font: inherit;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  padding: 22px 18px;
+}

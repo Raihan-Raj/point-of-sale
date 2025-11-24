@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/toastify.css') }}">
     <script type="" src="{{ asset('js/toastify.js') }}"></script>
     <script src="{{ asset('js/config.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
 
