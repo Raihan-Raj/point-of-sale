@@ -27,7 +27,7 @@
                     <br>
                  <button type="submit">Submit</button>    
             <div>      
-                <a class="btn btn-link" href="/sendOtp">
+                <a class="btn btn-link" href="/send-otp">
                     Forgot Your Password? 
                 </a>  
             </div>
