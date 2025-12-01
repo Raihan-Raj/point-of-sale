@@ -12,6 +12,10 @@ use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
+    function welcome()
+    {
+        return view('frontpages.welcome-page');
+    }
     function LoginPage()
     {
         return view('frontpages.login-page');
@@ -31,6 +35,11 @@ class UserController extends Controller
     function resetPasswordPage()
     {
         return view('frontpages.resetpass-page');
+    }
+
+    function UserLogout()
+    {
+        return redirect('/userLogin')->cookie('token', '', -1);
     }
     public function userRegistration(Request $request)
     {
