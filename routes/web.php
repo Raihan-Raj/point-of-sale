@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\TokenVerificationMiddleware;
+use Egulias\EmailValidator\Warning\TLD;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,7 +31,7 @@ Route::get('/userLogin', [UserController::class, 'LoginPage']);
 Route::get('/userRegistration', [UserController::class, 'RegistrationPage']);
 Route::get('/sendOtp', [UserController::class, 'SendOtpPage']);
 Route::get('/verifyOtp', [UserController::class, 'VerifyOtpPage']);
-Route::get('/resetPassword', [UserController::class, 'resetPasswordPage']);
+Route::get('/resetPassword', [UserController::class, 'resetPasswordPage'])->middleware(TokenVerificationMiddleware::class);
 //dashboard
 Route::get('/', [UserController::class, 'welcome']);
-Route::get('/dashboard', [DashboardController::class, 'dashboardPage']);
+Route::get('/dashboard', [DashboardController::class, 'dashboardPage'])->middleware(TokenVerificationMiddleware::class);
