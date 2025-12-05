@@ -1,4 +1,4 @@
-@include('layout.app')
+@extends('layout.app')
     <div class="container">
                 <div class="header">
                     <div class="logo">
