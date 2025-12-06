@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\TokenVerificationMiddleware;
+use App\Models\Category;
 use Egulias\EmailValidator\Warning\TLD;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +41,10 @@ Route::get('/resetPassword', [UserController::class, 'resetPasswordPage'])->midd
 //dashboard
 Route::get('/', [UserController::class, 'welcome']);
 Route::get('/dashboard', [DashboardController::class, 'dashboardPage'])->middleware(TokenVerificationMiddleware::class);
+
+//Category Api
+Route::get('/categoryPage', [CategoryController::class, 'CategoryPage'])->middleware(TokenVerificationMiddleware::class);
+Route::post('/category-create', [CategoryController::class, 'CategoryCreate'])->middleware(TokenVerificationMiddleware::class);
+Route::get('/category-list', [CategoryController::class, 'CategotyList'])->middleware(TokenVerificationMiddleware::class);
+Route::post('/category-delete', [CategoryController::class, 'CategoryDelete'])->middleware(TokenVerificationMiddleware::class);
+Route::post('/category-update', [CategoryController::class, 'CategoryUpdate'])->middleware(TokenVerificationMiddleware::class);
