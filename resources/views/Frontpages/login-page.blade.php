@@ -1,43 +1,78 @@
 @extends('layout.app')
-    <div class="container">
-                <div class="header">
-                    <div class="logo">
-                    </div>
-                    <h2>Company<span class="highlight">Name</span></h2>
-                    <h3>company slogan</h3>
-                </div>
-                <form method="POST" class="form" action="/user-login" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-control email">
-                        <div class="icon">
-                            <i class="far fa-user"></i>
-                        </div>
-                        <input id="email" type="email" placeholder="Email" class="@error('email') is-invalid @enderror"
-                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                    </div>
-                    <br>
-                    <div class="form-control password">
-                        <div class="icon">
-                            <i class="fas fa-lock"></i>
-                        </div>
-                        <input id="password" type="password" placeholder="password"
-                            class="@error('password') is-invalid @enderror" name="password" required
-                            autocomplete="current-password">
-                    </div>
-                    <br>
-                 <button type="submit">Submit</button>    
-            <div>      
-                <a class="btn btn-link" href="/send-otp">
-                    Forgot Your Password? 
-                </a>  
-            </div>
-            <div>
-                Don't have an account? <a href="/userRegistration">Sign Up Now</a>
-            </div>
-            </form>
-    </div>
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-sm p-4" style="width: 100%; max-width: 420px;">
+        
+        <!-- Header -->
+        <div class="text-center mb-4">
+            <h2>Company <span class="text-primary">Name</span></h2>
+            <p class="text-muted">company slogan</p>
+        </div>
 
-    <script>
+        <!-- Form -->
+        <form method="POST" action="/user-login">
+            
+          @csrf
+
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                    id="email"
+                    type="email"
+                    class="form-control @error('email') is-invalid @enderror"
+                    name="email"
+                    value="{{ old('email') }}"
+                    placeholder="Enter your email"
+                    required
+                    autofocus
+                >
+                @error('email')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                    id="password"
+                    type="password"
+                    class="form-control @error('password') is-invalid @enderror"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+                @error('password')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <!-- Submit -->
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">
+                    Login
+                </button>
+            </div>
+
+            <!-- Links -->
+            <div class="text-center mb-2">
+                <a href="/sendOtp" class="text-decoration-none">
+                    Forgot Your Password?
+                </a>
+            </div>
+
+            <div class="text-center">
+                Don’t have an account?
+                <a href="/userRegistration" class="fw-semibold text-decoration-none">
+                    Sign Up Now
+                </a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+   {{--  <script>
       async function submitLogin(){
         let email=document.getElementById('email'),value;
          let password=document.getElementById('password'),value;
@@ -54,6 +89,6 @@ if(email.length===0){
   }
 }
       }
-    </script>
+    </script> --}}
    
 

@@ -2,10 +2,16 @@
   <div class="row">
     <div class="col-lg-12">
       <div>
-       <div class="d-flex justify-content-between align-items-center mb-3">
+       <div class="d-flex justify-content-between align-items-center">
       <h4 class="fw-bold">Category</h4>
+        <button
+         type="button"
+         class="float-end btn m-0 btn-sm bg-gradient-primary btn-primary"
+         data-bs-toggle="modal"
+         data-bs-target="#create-modal">
+         Create
+        </button>
       </div>
-      <button type="button" class="float-end btn m-0 btn-sm bg-gradient-primary btn-primary" data-toggle="modal" data-target="#create-modal">Create</button>
       <hr>
    <table id="tableData" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
    <thead class="table-dark">
@@ -48,6 +54,10 @@
                 tableList.append(row)
         })
 
-        let table = new DataTable('#tableData');
-    }
+        /* let table = new DataTable('#tableData'); */
+    new DataTable('#tableData',{
+      order:[[0,'desc']],
+      lengthMenu:[10,20,30,40,50]
+    });
+  }
 </script>

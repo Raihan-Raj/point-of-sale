@@ -1,13 +1,13 @@
 <!-- Modal -->
   <div class="modal fade" id="create-modal" role="dialog" tabindex="-1" aria-labelledby="#exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-    
+    <div class="modal-dialog"> 
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Create Category</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+         
         <div class="modal-body">
          <div class="col-12 p-1">
             <label class="form-label">Category Name *</label>
@@ -40,6 +40,7 @@
                 successToast('Request Completed');
                 document.getElementById("save-form").reset();
                
+                await getList();
             }
             else{
                 errorToast("Request fail !")
