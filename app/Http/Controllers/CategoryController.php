@@ -45,4 +45,13 @@ class CategoryController extends Controller
                 'name' => $request->input('name'),
             ]);
     }
+
+    function CategoryById(Request $request)
+    {
+        /* sleep(2); */
+        $category_id = $request->input('id');
+        $user_id = $request->header('id');
+        return Category::where('id', $category_id)->where('user_id', $user_id)
+            ->first();
+    }
 }

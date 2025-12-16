@@ -51,6 +51,7 @@ Route::post('/category-create', [CategoryController::class, 'CategoryCreate'])->
 Route::get('/category-list', [CategoryController::class, 'CategotyList'])->middleware(TokenVerificationMiddleware::class);
 Route::post('/category-delete', [CategoryController::class, 'CategoryDelete'])->middleware(TokenVerificationMiddleware::class);
 Route::post('/category-update', [CategoryController::class, 'CategoryUpdate'])->middleware(TokenVerificationMiddleware::class);
+Route::post('/category-by-id', [CategoryController::class, 'CategoryById'])->middleware(TokenVerificationMiddleware::class);
 
 //Customer Api
 Route::post("/customer-create", [CustomerController::class, 'CustomerCreate'])->middleware(TokenVerificationMiddleware::class);

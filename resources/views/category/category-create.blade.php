@@ -9,11 +9,12 @@
         </div>
          
         <div class="modal-body">
+          <form id="save-form">
          <div class="col-12 p-1">
             <label class="form-label">Category Name *</label>
-             <input type="text" class="form-control" id="categoryName">
+            <input type="text" class="form-control" id="categoryName">
          </div>
-                       
+         </form>          
         </div>
         <div class="modal-footer" style="padding:30px">
           <button id="modal-close" class="btn btn-sm btn-danger" data-bs-dismiss="modal" aria-label="close">Close</button>
