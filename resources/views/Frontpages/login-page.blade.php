@@ -9,10 +9,7 @@
         </div>
 
         <!-- Form -->
-        <form method="POST" action="/user-login">
-            
-          @csrf
-
+        <form>
             <!-- Email -->
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -32,6 +29,7 @@
             </div>
 
             <!-- Password -->
+            <br>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input
@@ -46,10 +44,10 @@
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
-
+<br>
             <!-- Submit -->
             <div class="d-grid mb-3">
-                <button type="submit" class="btn btn-primary">
+                <button type="button" onclick="submitLogin()" class="btn btn-primary">
                     Login
                 </button>
             </div>
@@ -72,10 +70,10 @@
     </div>
 </div>
 
-   {{--  <script>
+    <script>
       async function submitLogin(){
-        let email=document.getElementById('email'),value;
-         let password=document.getElementById('password'),value;
+        let email=document.getElementById('email').value;
+         let password=document.getElementById('password').value;
 if(email.length===0){
   errorToast("Email is required");
 }else if(password.length===0){
@@ -89,6 +87,6 @@ if(email.length===0){
   }
 }
       }
-    </script> --}}
+    </script>
    
 

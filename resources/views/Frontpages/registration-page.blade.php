@@ -1,38 +1,107 @@
 @include('layout.app')
-    <div class="container">
-      <form method="POST" class="form" action="/user-registration" enctype="multipart/form-data" >
-        @csrf
-        <h2>Register Form!</h2>
-        <div class="form-control">
-          <label for="email">Email</label>
-          <input id="email" type="text" name="email" placeholder="Enter email" />
-          <small>Error message</small>
-        </div>
-        <div class="form-control">
-          <label for="firstName">FirstName</label>
-          <input id="firstName" type="text" name="firstName" placeholder="Enter FirstName" />
-          <small>Error message</small>
-        </div>
-        <div class="form-control">
-          <label for="lastName">lastName</label>
-          <input id="lastName" type="text" name="lastName" placeholder="Enter LastName" />
-          <small>Error message</small>
-        </div>
-        <div class="form-control">
-          <label for="mobile">Mobile</label>
-          <input id="mobile" type="text" name="mobile" placeholder="Enter Mobile" />
-          <small>Error message</small>
-        </div>
-        <div class="form-control">
-          <label for="password">Password</label>
-          <input id="password" type="password" name="password" placeholder="Enter password" />
-          <small>Error message</small>
-        </div>
-        <button type="submit">Submit</button> 
-      </form>
-    </div>
+      <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow-lg border-0" style="max-width: 420px; width: 100%;">
+        <div class="card-body p-4">
 
-{{-- <script>
+            <!-- Header -->
+            <div class="text-center mb-4">
+                <h3 class="fw-bold">Create Account</h3>
+                <p class="text-muted mb-0">Register to continue</p>
+            </div>
+
+            <!-- Form -->
+            <form>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input
+                        id="email"
+                        type="email"
+                        class="form-control"
+                        placeholder="Enter email"
+                    />
+                </div>
+
+                <!-- First Name -->
+                <br>
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input
+                        id="firstName"
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter first name"
+                    />
+                </div>
+
+                <!-- Last Name -->
+                <br>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input
+                        id="lastName"
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter last name"
+                    />
+                </div>
+
+                <!-- Mobile -->
+                <br>
+                <div class="mb-3">
+                    <label for="mobile" class="form-label">Mobile Number</label>
+                    <input
+                        id="mobile"
+                        type="text"
+                        class="form-control"
+                        placeholder="01XXXXXXXXX"
+                    />
+                </div>
+
+                <!-- Password -->
+                <br>
+                <div class="mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input
+                        id="password"
+                        type="password"
+                        class="form-control"
+                        placeholder="Enter password"
+                    />
+                </div>
+
+                <!-- Submit Button -->
+                <br>
+                <div class="d-grid">
+                    <button
+                        type="button"
+                        onclick="onRegistration()"
+                        class="btn btn-primary btn-lg"
+                    >
+                        Register
+                    </button>
+                </div>
+
+                <!-- Footer -->
+
+                <div class="text-center mt-3">
+                    <small class="text-muted">
+                        Already have an account?
+                        <a href="/userLogin" class="text-decoration-none fw-semibold">
+                            Login
+                        </a>
+                    </small>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+  
+
+<script>
  async function onRegistration() {
   let email=document.getElementById('email').value;
   let firstName=document.getElementById('firstName').value;
@@ -63,21 +132,19 @@
       mobile:mobile,
       password:password
     })
-    if(res.status===200 && res.data['status']==='Success'){
+    if(res.status===200 && res.data['status']==='success'){
       successToast(res.data['message']);
       setTimeout(function(){
-        window.location.href='/userLogin'
       },2000)
-
-     else {
-      errorToast('Register is Success')
-     }
-
     }
+     else {
+      successToast('Register is Success')
+      window.location.href='/userLogin'
+     }
   }
 }
 
 
-</script> --}}
+</script>
  
 
