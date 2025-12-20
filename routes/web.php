@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\TokenVerificationMiddleware;
 use App\Models\Category;
@@ -42,6 +43,7 @@ Route::get('/resetPassword', [UserController::class, 'resetPasswordPage'])->midd
 Route::get('/userProfile', [UserController::class, 'ProfilePage'])->middleware(TokenVerificationMiddleware::class);
 Route::get('/categoryPage', [CategoryController::class, 'CategoryPage'])->middleware(TokenVerificationMiddleware::class);
 Route::get('/customerPage', [CustomerController::class, 'CustomerPage'])->middleware(TokenVerificationMiddleware::class);
+Route::get('/productPage', [CustomerController::class, 'ProductPage'])->middleware(TokenVerificationMiddleware::class);
 //dashboard
 Route::get('/', [UserController::class, 'welcome']);
 Route::get('/dashboard', [DashboardController::class, 'dashboardPage'])->middleware(TokenVerificationMiddleware::class);
@@ -59,3 +61,10 @@ Route::get("/customer-list", [CustomerController::class,    'CustomerList'])->mi
 Route::post("/customer-delete", [CustomerController::class, 'CustomerDelete'])->middleware(TokenVerificationMiddleware::class);
 Route::post("/customer-update", [CustomerController::class, 'CustomerUpdate'])->middleware(TokenVerificationMiddleware::class);
 Route::post("/customer-by-id", [CustomerController::class, 'CustomerById'])->middleware(TokenVerificationMiddleware::class);
+
+//Product Api
+Route::post("/product-create", [ProductController::class, 'CreateProduct'])->middleware(TokenVerificationMiddleware::class);
+Route::post("/product-delete", [ProductController::class, 'ProductDelete'])->middleware(TokenVerificationMiddleware::class);
+Route::get("/product-list", [ProductController::class,   'ProductList'])->middleware(TokenVerificationMiddleware::class);
+Route::post("/product-update", [ProductController::class, 'ProductUpdate'])->middleware(TokenVerificationMiddleware::class);
+Route::get("/product-by-id", [ProductController::class,  'ProductById'])->middleware(TokenVerificationMiddleware::class);
