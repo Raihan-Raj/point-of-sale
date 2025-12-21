@@ -43,7 +43,7 @@ Route::get('/resetPassword', [UserController::class, 'resetPasswordPage'])->midd
 Route::get('/userProfile', [UserController::class, 'ProfilePage'])->middleware(TokenVerificationMiddleware::class);
 Route::get('/categoryPage', [CategoryController::class, 'CategoryPage'])->middleware(TokenVerificationMiddleware::class);
 Route::get('/customerPage', [CustomerController::class, 'CustomerPage'])->middleware(TokenVerificationMiddleware::class);
-Route::get('/productPage', [CustomerController::class, 'ProductPage'])->middleware(TokenVerificationMiddleware::class);
+Route::get('/productPage', [ProductController::class, 'ProductPage'])->middleware(TokenVerificationMiddleware::class);
 //dashboard
 Route::get('/', [UserController::class, 'welcome']);
 Route::get('/dashboard', [DashboardController::class, 'dashboardPage'])->middleware(TokenVerificationMiddleware::class);
