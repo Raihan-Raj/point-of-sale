@@ -67,4 +67,4 @@ Route::post("/product-create", [ProductController::class, 'CreateProduct'])->mid
 Route::post("/product-delete", [ProductController::class, 'ProductDelete'])->middleware(TokenVerificationMiddleware::class);
 Route::get("/product-list", [ProductController::class,   'ProductList'])->middleware(TokenVerificationMiddleware::class);
 Route::post("/product-update", [ProductController::class, 'ProductUpdate'])->middleware(TokenVerificationMiddleware::class);
-Route::get("/product-by-id", [ProductController::class,  'ProductById'])->middleware(TokenVerificationMiddleware::class);
+Route::post("/product-by-id", [ProductController::class,  'ProductById'])->middleware(TokenVerificationMiddleware::class);
