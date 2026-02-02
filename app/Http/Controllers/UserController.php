@@ -14,27 +14,27 @@ class UserController extends Controller
 {
     function welcome()
     {
-        return view('frontpages.welcome-page');
+        return view('UserProfile.welcome-page');
     }
     function LoginPage()
     {
-        return view('frontpages.login-page');
+        return view('UserProfile.login-page');
     }
     function RegistrationPage()
     {
-        return view('frontpages.registration-page');
+        return view('UserProfile.registration-page');
     }
     function SendOtpPage()
     {
-        return view('frontpages.sendotp-page');
+        return view('UserProfile.sendotp-page');
     }
     function VerifyOtpPage()
     {
-        return view('frontpages.verifyotp-page');
+        return view('UserProfile.verifyotp-page');
     }
     function resetPasswordPage()
     {
-        return view('frontpages.resetpass-page');
+        return view('UserProfile.resetpass-page');
     }
 
     function ProfilePage()

@@ -64,7 +64,6 @@
                     Sign Up Now
                 </a>
             </div>
-
         </form>
     </div>
 </div>

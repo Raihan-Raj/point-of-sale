@@ -72,6 +72,6 @@ Route::post("/product-by-id", [ProductController::class,  'ProductById'])->middl
 
 //Invoice
 Route::post("/invoice-create", [InvoiceController::class, 'invoiceCreate'])->middleware(TokenVerificationMiddleware::class);
-Route::get("/invoice-list", [ProductController::class, 'invoiceList'])->middleware(TokenVerificationMiddleware::class);
+Route::get("/invoice-list", [InvoiceController::class, 'invoiceList'])->middleware(TokenVerificationMiddleware::class);
 Route::post("/invoice-details", [InvoiceController::class, 'invoiceDetails'])->middleware(TokenVerificationMiddleware::class);
 Route::post("/invoice-delete", [InvoiceController::class, 'invoiceDelete'])->middleware(TokenVerificationMiddleware::class);

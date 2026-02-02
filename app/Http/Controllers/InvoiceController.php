@@ -14,6 +14,7 @@ class InvoiceController extends Controller
 
     function invoiceCreate(Request $request)
     {
+
         DB::beginTransaction(); //transaction start
 
         try {
@@ -52,8 +53,16 @@ class InvoiceController extends Controller
 
             return 1;
         } catch (Exception $e) {
-            DB::rollBack();
+            DB::rollBack(); //if eny error its not working
             return 0;
+
+            /* catch (Exception $e) {
+    DB::rollBack();
+    return response()->json([
+        'error' => $e->getMessage()
+    ], 500);
+}
+ */
         }
     }
 
