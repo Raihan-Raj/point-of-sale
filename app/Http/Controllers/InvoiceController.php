@@ -12,6 +12,15 @@ use Illuminate\Support\Facades\DB;
 class InvoiceController extends Controller
 {
 
+    function SalePage()
+    {
+        return view('backpage.sale-page');
+    }
+
+    function InvoicePage()
+    {
+        return view('backpage.invoice-page');
+    }
     function invoiceCreate(Request $request)
     {
 

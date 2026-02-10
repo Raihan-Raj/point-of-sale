@@ -9,7 +9,6 @@
 
                 <!-- Hidden ID -->
                 <input type="hidden" id="deleteID">
-                <input type="hidden" id="deleteFilePath">
             </div>
 
             <!-- Modal Footer -->
@@ -37,11 +36,9 @@
 <script>
     async function itemDelete(){
       let id = document.getElementById('deleteID').value;
-      let deleteFilePath = document.getElementById('deleteFilePath').value;
     document.getElementById('delete-modal-close').click();
-    
 
-    let res=await axios.post("/product-delete",{id:id,file_path:deleteFilePath})
+    let res=await axios.post("/invoice-delete",{inv_id:id})
     if(res.data===1){
         successToast("Request Completed")
         await getList();
