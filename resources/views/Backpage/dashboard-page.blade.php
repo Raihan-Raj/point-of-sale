@@ -1,7 +1,6 @@
 
 @extends('layout.sidenav-layout')
 @section('content')
-<body>
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
@@ -134,49 +133,52 @@
 				<li>
 					<i class='bx bxs-message-dots' ></i>
 					<span class="text">
-						<h3>1020</h3>
+						<h3><span id="product"></span></h3>
 						<p>Product</p>
 					</span>
 				</li>
 				<li>
 					<i class=' bx bxs-doughnut-chart' ></i>
 					<span class="text">
-						<h3>2834</h3>
+						<h3><span id="category"></span></h3>
 						<p>Category</p>
 					</span>
 				</li>
                 <li>
 					<i class='bx bxs-group' ></i>
 					<span class="text">
-						<h3>2834</h3>
+						<h3><span id="customer"></span></h3>
 						<p>Customer</p>
 					</span>
 				</li>
                 <li>
 					<i class='bx bx-receipt' ></i>
 					<span class="text">
-						<h3>2834</h3>
+						<h3><span id="invoice"></span></h3>
 						<p>Invoice</p>
 					</span>
 				</li>
 				<li>
-					<i class='bx bxs-dollar-circle' ></i>
 					<span class="text">
-						<h3>N$2543.00</h3>
+						<i class='bx bxs-dollar-circle'>
+							<h3><span id="total"></span></h3>
+						</i>
 						<p>Total Sale</p>
 					</span>
 				</li>
-                <li>
-					<i class='bx bxs-dollar-circle' ></i>
-					<span class="text">
-						<h3>N$2543.00</h3>
+                <li>	
+					<span class="text">	
+						<i class='bx bxs-dollar-circle' >
+							<h3><span id="vat"></span></h3>
+						</i>
 						<p>Vat Collection</p>
 					</span>
 				</li>
                 <li>
-					<i class='bx bxs-dollar-circle' ></i>
-					<span class="text">
-						<h3>N$2543.00</h3>
+					<span class="text">	
+						<i class='bx bxs-dollar-circle' >
+						<h3><span id="payable"></span></h3>
+					</i>
 						<p>Total Collection</p>
 					</span>
 				</li>
@@ -277,8 +279,31 @@
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->
-</body>
-</html>
+
+
+<script>
+
+	getList();
+
+	async function getList() {
+
+		let res=await axios.get('/summary');
+
+		document.getElementById('product').innerText=res.data['product']
+		document.getElementById('category').innerText=res.data['category']
+		document.getElementById('customer').innerText=res.data['customer']
+		document.getElementById('invoice').innerText=res.data['invoice']
+		document.getElementById('total').innerText=res.data['total']
+		document.getElementById('vat').innerText=res.data['vat']
+		document.getElementById('payable').innerText=res.data['payable']
+
+	
+
+	}
+
+
+</script>
+
 
 
 

@@ -10,6 +10,8 @@
 
 	<!-- My CSS -->
 	<link rel="stylesheet" href="{{ asset('css/sidenav.style.css') }}">
+    <!-- 3️⃣ Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> 
     <title>AdminHub</title>
 </head>
 <body>

@@ -50,6 +50,7 @@ Route::get('/invoicePage', [InvoiceController::class, 'InvoicePage'])->middlewar
 //dashboard
 Route::get('/', [UserController::class, 'welcome']);
 Route::get('/dashboard', [DashboardController::class, 'dashboardPage'])->middleware(TokenVerificationMiddleware::class);
+Route::get('/summary', [DashboardController::class, 'Summary'])->middleware(TokenVerificationMiddleware::class);
 
 //Category Api
 Route::post('/category-create', [CategoryController::class, 'CategoryCreate'])->middleware(TokenVerificationMiddleware::class);
