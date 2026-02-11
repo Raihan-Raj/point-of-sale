@@ -46,7 +46,7 @@
 				</a>
 			</li>
             <li>
-				<a href="#">
+				<a href="{{ url('/reportPage') }}">
 					<i class="bx bx-receipt bx-spin-hover"></i>
 					<span class="text">Report</span>
 				</a>

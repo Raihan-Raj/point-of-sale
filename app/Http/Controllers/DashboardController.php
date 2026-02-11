@@ -8,6 +8,7 @@ use App\Models\Invoice;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
+
 class DashboardController extends Controller
 {
     function dashboardPage()
